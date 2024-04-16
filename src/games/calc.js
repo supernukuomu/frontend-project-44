@@ -1,7 +1,5 @@
-import gamePlay from "../index.js";
+import getGameInfo from "../index.js";
 import getRandomInt from "../random.js";
-
-const exercise = "What is the result of the expression?";
 
 const calculate = (a, b, operator) => {
   switch (operator) {
@@ -16,9 +14,9 @@ const calculate = (a, b, operator) => {
   }
 };
 
-const mainCode = () => {
-  const firstRandomNumber = getRandomInt();
-  const secondRandomNumber = getRandomInt();
+const getCorrectAnswer = () => {
+  const firstRandomNumber = getRandomInt(0, 30);
+  const secondRandomNumber = getRandomInt(0, 30);
   const operators = ["+", "-", "*"];
   const randomOperator = operators[getRandomInt(0, operators.length - 1)];
   const question = `${firstRandomNumber} ${randomOperator} ${secondRandomNumber}`;
@@ -30,8 +28,9 @@ const mainCode = () => {
   return [question, correctAnswer];
 };
 
-const brainCalc = () => {
-  gamePlay(mainCode, exercise);
+const startBrainCalc = () => {
+  const thatIsTheQuestion = "What is the result of the expression?";
+  getGameInfo(getCorrectAnswer, thatIsTheQuestion);
 };
 
-export default brainCalc;
+export default startBrainCalc;
