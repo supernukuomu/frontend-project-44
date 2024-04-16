@@ -1,13 +1,11 @@
-import gamePlay from "../index.js";
+import getGameInfo from "../index.js";
 import getRandomInt from "../random.js";
-
-const exercise = "Find the greatest common divisor of given numbers.";
 
 const getNod = (a, b) => (b !== 0 ? getNod(b, a % b) : a);
 
-const mainCode = () => {
-  const firstRandomNumber = getRandomInt();
-  const secondRandomNumber = getRandomInt();
+const getCorrectAnswer = () => {
+  const firstRandomNumber = getRandomInt(0, 30);
+  const secondRandomNumber = getRandomInt(0, 30);
   const question = `${firstRandomNumber} ${secondRandomNumber}`;
   const correctAnswer = getNod(
     firstRandomNumber,
@@ -16,8 +14,10 @@ const mainCode = () => {
   return [question, correctAnswer];
 };
 
-const brainGcd = () => {
-  gamePlay(mainCode, exercise);
+const startBrainGcd = () => {
+  const thatIsTheQuestion =
+    "Find the greatest common divisor of given numbers.";
+  getGameInfo(getCorrectAnswer, thatIsTheQuestion);
 };
 
-export default brainGcd;
+export default startBrainGcd;
