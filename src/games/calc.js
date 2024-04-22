@@ -23,7 +23,8 @@ const getGameData = () => {
   const correctAnswer = calculate(
     firstRandomNumber,
     secondRandomNumber,
-    randomOperator).toString();
+    randomOperator
+    ).toString();
   return [question, correctAnswer];
 };
 
