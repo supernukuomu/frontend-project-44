@@ -20,11 +20,7 @@ const getGameData = () => {
   const operators = ['+', '-', '*'];
   const randomOperator = operators[getRandomInt(0, operators.length - 1)];
   const question = `${firstRandomNumber} ${randomOperator} ${secondRandomNumber}`;
-  const correctAnswer = calculate(
-    firstRandomNumber,
-    secondRandomNumber,
-    randomOperator
-    ).toString();
+  const correctAnswer = calculate(firstRandomNumber, secondRandomNumber, randomOperator).toString();
   return [question, correctAnswer];
 };
 
